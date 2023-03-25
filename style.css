@@ -1,4 +1,17 @@
 body {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  font-family: "Gloria Hallelujah", cursive;
+}
+
+button {
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.hide {
+    display: none;
 }
