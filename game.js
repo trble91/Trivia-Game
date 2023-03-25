@@ -112,7 +112,7 @@ const question11 = {
       "The Sample Years",
       "The Prime Years",
     ],
-    correct: "The Golden Age"s,
+    correct: "The Golden Age",
   },
 };
 
@@ -221,41 +221,28 @@ const question19 = {
 };
 
 const question20 = {
-  question: " In what year was The Parental Advisory label introduced by the Recording Industry Association of America?",
+  question: "This hit was written for Snoop Dogg & Dr. Dre by Jay-Z. Which song is it?",
   answers: {
     choices: [
-      "1986",
-      "1978",
-      "1985",
-      "1989",
+      "The Chronic",
+      "Gin & Juice",
+      "Still Dre",
+      "Drop It Like It's Hot",
     ],
-    correct: "1985",
+    correct: "Still Dre",
   },
 };
 
 const question21 = {
-    question: " In what year was The Parental Advisory label introduced by the Recording Industry Association of America?",
+    question: "This Hip-Hop Legend, produced Soul4Real's Candy Rain",
     answers: {
       choices: [
-        "1986",
-        "1978",
-        "1985",
-        "1989",
+        "Heavy D",
+        "Slick Rick",
+        "Rakim",
+        "Spoonie G",
       ],
-      correct: "1985",
-    },
-  };
-  
-  const question22 = {
-    question: " In what year was The Parental Advisory label introduced by the Recording Industry Association of America?",
-    answers: {
-      choices: [
-        "1986",
-        "1978",
-        "1985",
-        "1989",
-      ],
-      correct: "1985",
+      correct: "Heavy D",
     },
   };
   
@@ -282,7 +269,6 @@ const questions = [
   question19,
   question20,
   question21,
-  question22,
 ];
 
 let questionIndex = 0
@@ -314,12 +300,12 @@ function displayQuestion() {
   questionDiv.innerHTML = "";
 
 //   let text = document.querySelector(".questions");
-    let question = questions[questionIndex].question
+  let question = questions[questionIndex].question
   let choices = questions[questionIndex].answers.choices;
   // shuffle choices [Bonus]
 
   let questionText = `
-    <div>
+    <div class="content">
         <h1>${question}</h1>
         <h3>Click One</h3>
         <ul>
@@ -335,21 +321,40 @@ function displayQuestion() {
 
   // Appends character info to the end
   questionDiv.insertAdjacentHTML("beforeend", questionText);
+
+
 }
 
 function checkAnswer(){
-    let userChoice = document.querySelector("input[name=choice]:checked").value
+    let userChoice = document.querySelector("input[name=choice]:checked").value;
     if (userChoice === questions[questionIndex].answers.correct){
-        console.log("You got it right!!!")
+
+      let checkDiv = document.querySelector(".check");
+      checkDiv.innerHTML = "";
+
+      let answerText = "You got it right!!!";
+
+      checkDiv.insertAdjacentHTML("afterend", answerText);
+
+      answerText.innerHTML = "";
+      
         // What do you want to do when they get it right?
     } else {
-        console.log("Get your game up!!")
+
+      let wrongDiv = document.querySelector(".check");
+      wrongDiv.innerHTML = "";
+
+      let wrongText = "My Guy! Seriously!!";
+
+      wrongDiv.insertAdjacentHTML("afterend", wrongText);
+     
         // What do you want to do when they get it wrong?
     }
+
 }
 
 
 
-startButton.addEventListener("click", startGame);
+startButton.addEventListener("click", startGame)
 nextButton.addEventListener("click", handleNextQuestion)
 checkButton.addEventListener("click", checkAnswer)
