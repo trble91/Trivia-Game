@@ -91,21 +91,18 @@ const question9 = {
 };
 
 const question10 = {
-  question: "In what year was The Parental Advisory label introduced by the Recording Industry Association of America?",
+  question:
+    "In what year was The Parental Advisory label introduced by the Recording Industry Association of America?",
   answers: {
-    choices: [
-      "1986",
-      "1978",
-      "1985",
-      "1989",
-    ],
+    choices: ["1986", "1978", "1985", "1989"],
     correct: "1985",
   },
 };
 
 const question11 = {
-  question: "What is the time between the mid-1980s and mid-1990s known as regarding Hip-Hop?",
-  answers: { 
+  question:
+    "What is the time between the mid-1980s and mid-1990s known as regarding Hip-Hop?",
+  answers: {
     choices: [
       "The Golden Age",
       "The Rebirth",
@@ -119,25 +116,16 @@ const question11 = {
 const question12 = {
   question: "What subgenre started the blend of Hip-Hop and R&B?",
   answers: {
-    choices: [
-      "New Jack Swing",
-      "Trap & B",
-      "Boom Bap",
-      "Chipmunk Sampling",
-    ],
+    choices: ["New Jack Swing", "Trap & B", "Boom Bap", "Chipmunk Sampling"],
     correct: "New Jack Swing",
   },
 };
 
 const question13 = {
-  question: "This female singer is regarded as the Queen of Hip-Hop Soul. Who is she?",
+  question:
+    "This female singer is regarded as the Queen of Hip-Hop Soul. Who is she?",
   answers: {
-    choices: [
-      "Beyonce",
-      "Amerie",
-      "Ashanti",
-      "Mary J. Blige",
-    ],
+    choices: ["Beyonce", "Amerie", "Ashanti", "Mary J. Blige"],
     correct: "Mary J. Blige",
   },
 };
@@ -145,12 +133,7 @@ const question13 = {
 const question14 = {
   question: "This female is regarded as the Queen of Rap. Who is she?",
   answers: {
-    choices: [
-      "Lil' Kim",
-      "Cardi B",
-      "NIcki Minaj",
-      "Queen Latifah ",
-    ],
+    choices: ["Lil' Kim", "Cardi B", "NIcki Minaj", "Queen Latifah "],
     correct: "NIcki Minaj",
   },
 };
@@ -158,12 +141,7 @@ const question14 = {
 const question15 = {
   question: "What was the name of The Game's debut album in 2005?",
   answers: {
-    choices: [
-      "The Game",
-      "The Truth",
-      "The Show",
-      "The Documentary",
-    ],
+    choices: ["The Game", "The Truth", "The Show", "The Documentary"],
     correct: "The Documentary",
   },
 };
@@ -171,38 +149,25 @@ const question15 = {
 const question16 = {
   question: "Which hip hop star was the voice of Reptar on Rugrats?",
   answers: {
-    choices: [
-      "Busta Rhymes",
-      "Q-Tip",
-      "Biz Markie",
-      "Doug E. Fresh",
-    ],
+    choices: ["Busta Rhymes", "Q-Tip", "Biz Markie", "Doug E. Fresh"],
     correct: "Busta Rhymes",
   },
 };
 
 const question17 = {
-  question: "Which of these albums from Nas has no tracks produced by DJ Premier?",
+  question:
+    "Which of these albums from Nas has no tracks produced by DJ Premier?",
   answers: {
-    choices: [
-      "It Was Written",
-      "Stillmatic",
-      "God's Son",
-      "Nastradamus",
-    ],
+    choices: ["It Was Written", "Stillmatic", "God's Son", "Nastradamus"],
     correct: "God's Son",
   },
 };
 
 const question18 = {
-  question: "Which producer graduated from Harvard before their music career took off?",
+  question:
+    "Which producer graduated from Harvard before their music career took off?",
   answers: {
-    choices: [
-      "Diddy",
-      "Ryan Leslie",
-      "Swizz Beatz",
-      "Steven Jordan",
-    ],
+    choices: ["Diddy", "Ryan Leslie", "Swizz Beatz", "Steven Jordan"],
     correct: "Ryan Leslie",
   },
 };
@@ -210,18 +175,14 @@ const question18 = {
 const question19 = {
   question: "John Jackson is better known to his fans as?",
   answers: {
-    choices: [
-      "RIck Ross",
-      "Fabaolous",
-      "Pusha T",
-      "Lil' Yatchy",
-    ],
+    choices: ["RIck Ross", "Fabaolous", "Pusha T", "Lil' Yatchy"],
     correct: "Fabaolous",
   },
 };
 
 const question20 = {
-  question: "This hit was written for Snoop Dogg & Dr. Dre by Jay-Z. Which song is it?",
+  question:
+    "This hit was written for Snoop Dogg & Dr. Dre by Jay-Z. Which song is it?",
   answers: {
     choices: [
       "The Chronic",
@@ -234,18 +195,13 @@ const question20 = {
 };
 
 const question21 = {
-    question: "This Hip-Hop Legend, produced Soul4Real's Candy Rain",
-    answers: {
-      choices: [
-        "Heavy D",
-        "Slick Rick",
-        "Rakim",
-        "Spoonie G",
-      ],
-      correct: "Heavy D",
-    },
-  };
-  
+  question: "This Hip-Hop Legend, produced Soul4Real's Candy Rain",
+  answers: {
+    choices: ["Heavy D", "Slick Rick", "Rakim", "Spoonie G"],
+    correct: "Heavy D",
+  },
+};
+
 const questions = [
   question0,
   question1,
@@ -271,7 +227,7 @@ const questions = [
   question21,
 ];
 
-let questionIndex = 0
+let questionIndex = 0;
 
 ///
 ////
@@ -280,15 +236,17 @@ let nextButton = document.querySelector(".next");
 let checkButton = document.querySelector(".check");
 
 function startGame() {
-    displayQuestion()
-    startButton.style.display = "none"
-    nextButton.classList.remove("hide")
-    checkButton.classList.remove("hide")
+  displayQuestion();
+  startButton.style.display = "none";
+  nextButton.classList.remove("hide");
+  checkButton.classList.remove("hide");
 }
 
-function handleNextQuestion(){
-    questionIndex++
-    displayQuestion()
+function handleNextQuestion() {
+  questionIndex++;
+  displayQuestion();
+  let clearDiv = document.querySelector(".check");
+  clearDiv.innerHTML = "Check Answer";
 }
 
 function displayQuestion() {
@@ -299,8 +257,8 @@ function displayQuestion() {
   let questionDiv = document.querySelector(".question");
   questionDiv.innerHTML = "";
 
-//   let text = document.querySelector(".questions");
-  let question = questions[questionIndex].question
+  //   let text = document.querySelector(".questions");
+  let question = questions[questionIndex].question;
   let choices = questions[questionIndex].answers.choices;
   // shuffle choices [Bonus]
 
@@ -321,40 +279,26 @@ function displayQuestion() {
 
   // Appends character info to the end
   questionDiv.insertAdjacentHTML("beforeend", questionText);
-
-
 }
 
-function checkAnswer(){
-    let userChoice = document.querySelector("input[name=choice]:checked").value;
-    if (userChoice === questions[questionIndex].answers.correct){
+function checkAnswer() {
+  let userChoice = document.querySelector("input[name=choice]:checked").value;
 
-      let checkDiv = document.querySelector(".check");
-      checkDiv.innerHTML = "";
-
-      let answerText = "You got it right!!!";
-
-      checkDiv.insertAdjacentHTML("afterend", answerText);
-
-      answerText.innerHTML = "";
-      
-        // What do you want to do when they get it right?
-    } else {
-
-      let wrongDiv = document.querySelector(".check");
-      wrongDiv.innerHTML = "";
-
-      let wrongText = "My Guy! Seriously!!";
-
-      wrongDiv.insertAdjacentHTML("afterend", wrongText);
-     
-        // What do you want to do when they get it wrong?
-    }
-
+  if (userChoice === questions[questionIndex].answers.correct) {
+    // What do you want to do when they get it right?
+    let checkDiv = document.querySelector(".check");
+    checkDiv.innerHTML = "";
+    let answerText = "You got it right!!!";
+    checkDiv.insertAdjacentHTML("beforeend", answerText);
+  } else {
+    // What do you want to do when they get it wrong?
+    let wrongDiv = document.querySelector(".check");
+    wrongDiv.innerHTML = "";
+    let wrongText = "My Guy! Seriously!!";
+    wrongDiv.insertAdjacentHTML("beforeend", wrongText);
+  }
 }
 
-
-
-startButton.addEventListener("click", startGame)
-nextButton.addEventListener("click", handleNextQuestion)
-checkButton.addEventListener("click", checkAnswer)
+startButton.addEventListener("click", startGame);
+nextButton.addEventListener("click", handleNextQuestion);
+checkButton.addEventListener("click", checkAnswer);

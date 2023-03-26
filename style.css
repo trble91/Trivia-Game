@@ -1,21 +1,23 @@
 body {
   display: grid;
-  flex-direction: column;
+  flex-wrap: column wrap;
   align-content: center;
   font-family: "Gloria Hallelujah", cursive;
   justify-content: center;
   background-color: #252525;
-  color: #eaeaea;
+  color: #eaeaea
 }
 
 .start {
-  display: flex;
+  display: grid;
   flex-direction: column;
   justify-content: center;
   padding: 5px;
   border-radius: 10px;
   margin: 300px;
   border-style: outset;
+  font-size: 12px;
+  font-family: "Gloria Hallelujah", cursive;
 }
 
 button {
@@ -27,34 +29,44 @@ button {
 }
 
 button:hover {
-  background: #b5b531db;
-  color: #eaeaea;
+  background: #ffff1fdb;
+  color: #191919;
 }
 
 button.check {
-  margin: 3px; /* space between buttons */
+  margin: 20px; /* space between buttons */
   background: #ffff00db; /* background color */
   color: #333; /* text color */
   font-size: 18px;
   font-family: "Gloria Hallelujah", cursive;
   border-radius: 50px; /* rounded corners */
   padding: 10px; /* space around text */
-  -moz-transition: all 0.2s;
+   -moz-transition: all 0.2s;
   -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  transition: all 0.5s; 
+}
+
+.left {
+  display: flex;
+  float: left;
+}
+
+.right {
+  display: flex;
+  float: right;
 }
 
 button.next {
-  margin: 3px; /* space between buttons */
+  margin: 20px; /* space between buttons */
   background: #ffff00db; /* background color */
   color: #333; /* text color */
   font-size: 18px;
   font-family: "Gloria Hallelujah", cursive;
   border-radius: 50px; /* rounded corners */
   padding: 10px; /* space around text */
-  -moz-transition: all 0.2s;
+   -moz-transition: all 0.2s;
   -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  transition: all 0.5s; 
 }
 
 .hide {
@@ -63,4 +75,21 @@ button.next {
 
 .content {
   display: grid;
+  cursor: pointer; 
+  align-items: center;
 }
+
+/* 
+@media screen {
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    font-family: "Gloria Hallelujah", cursive;
+    justify-content: center;
+    background-color: #252525;
+    color: #eaeaea;
+    padding-left: 150px;
+  }
+} */
