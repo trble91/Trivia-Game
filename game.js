@@ -276,7 +276,7 @@ function displayQuestion() {
    `;
   // dot notation to reference different positions of the object
   // Clears the inner HTML after each text insertion
-
+ 
   // Appends character info to the end
   questionDiv.insertAdjacentHTML("beforeend", questionText);
 }
@@ -289,7 +289,7 @@ function checkAnswer() {
     let checkDiv = document.querySelector(".check");
     checkDiv.innerHTML = "";
     let answerText = "You got it right!!!";
-    checkDiv.insertAdjacentHTML("beforeend", answerText);
+    checkDiv.insertAdjacentHTML("beforeend", answerText); 
   } else {
     // What do you want to do when they get it wrong?
     let wrongDiv = document.querySelector(".check");
@@ -302,3 +302,22 @@ function checkAnswer() {
 startButton.addEventListener("click", startGame);
 nextButton.addEventListener("click", handleNextQuestion);
 checkButton.addEventListener("click", checkAnswer);
+
+
+/*
+
+- Create a function to shuffle the array and display a random question
+- Create a function to keep score 
+
+// ${questions[questionIndex].answers.correct}
+
+
+
+
+
+
+
+
+
+
+*/

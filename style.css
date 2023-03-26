@@ -16,7 +16,7 @@ body {
   border-radius: 10px;
   margin: 300px;
   border-style: outset;
-  font-size: 12px;
+  font-size: 18px;
   font-family: "Gloria Hallelujah", cursive;
 }
 
@@ -74,9 +74,11 @@ button.next {
 }
 
 .content {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
   cursor: pointer; 
-  align-items: center;
 }
 
 /* 
