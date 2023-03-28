@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hip-Hop Trivia Game</title>
+    <title>Music Trivia Game</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,16 +12,25 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <script src="game.js" defer></script>
+    <script src="hiphopQuestions.js" type="module" defer></script>
+    <script src="popQuestions.js" type="module" defer></script>
+    <script src="countryQuestions.js" type="module" defer></script>
+    <script src="game.js" type="module" defer></script>
   </head>
   <body>
-    <div class="question">
+    <span class="score">000</span>
+    <div class="question"> 
       <!-- Inserted with JS -->
     </div>
-    <button class="start">Start Game</button>
-    <span>
+    <span class="button-container">
       <button class="check hide" class="left">Check Answer</button> 
       <button class="next hide" class="right">Next Question</button>
+      <button class="restart hide" onClick="location.reload();">Try Again</button>
     </span>
   </body>
+  <footer class="games">
+    <button class="hh1" href="game.js">Hip-Hop</button>
+    <button class="pop" href="pop.js">Pop</button>
+    <button class="country" href="country.js">Country</button>
+  </footer>
 </html>
