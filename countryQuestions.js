@@ -121,15 +121,15 @@ export const countryQuestions = [
     {
       question: "This musician is famous for marrying his younger cousin. Goodness gracious Great Balls of Fire.",
       answers: {
-        choices: ["Jerry Lee Lewis", "", "", ""],
+        choices: ["Jerry Lee Lewis", "Brad Paisley", "George Strait", "Billy Ray Cyrus"],
         correct: "Jerry Lee Lewis",
       },
     },
     {
-      question: "",
+      question: "Billy Ray Cyrus most popular song is about the heart",
       answers: {
-        choices: ["", "", "", ""],
-        correct: "",
+        choices: ["Achy Breaky Heart", "Love Of My Life", "Heartfelt", "Don't Break My Heart"],
+        correct: "Achy Breaky Heart",
       },
     },
     {

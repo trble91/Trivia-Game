@@ -13,18 +13,20 @@ let hhButton = document.querySelector(".hh1");
 let popButton = document.querySelector(".pop");
 let countryButton = document.querySelector(".country");
 let scoreBox = document.querySelector(".score")
+let title = document.querySelector(".frontText")
 
 function startGame(e) {
   let selection = e.target.innerText
-
+  
+  title.classList.add("hide")
   if (selection === "Hip-Hop") {
-    questions = hipHopQuestions
+    questions = hipHopQuestions;
   } else if (selection === "Pop") {
-    questions = popQuestions
+    questions = popQuestions;
   } else if (selection === "Country") {
-    questions = countryQuestions
+    questions = countryQuestions;
   } else {
-    questions = hipHopQuestions
+    questions = hipHopQuestions;l
   }
 
   shuffleQuestion();
@@ -96,13 +98,25 @@ function checkAnswer() {
   }
 }
 
+// function displayWinner() {
+//   if ( scoreBox.innerText === 100) {
+//     let winnerDiv = document.querySelector(".check");
+//     winnerDiv.innerHTML = "";
+//     let winnerText = "You've WON!!!";
+//     winnerDiv.insertAdjacentHTML("beforebegin", winnerText)
+//   } else {
+//     let loserDiv = document.querySelector(".check");
+//     loserDiv.innerHTML = "";
+//     let loserText = "Sorry! Try Again";
+//     loserDiv.insertAdjacentHTML("beforebegin", loserText)
+//   }
+// // }
+
+// displayWinner();
+
 nextButton.addEventListener("click", handleNextQuestion);
 checkButton.addEventListener("click", checkAnswer);
 hhButton.addEventListener("click", startGame);
 popButton.addEventListener("click", startGame);
 countryButton.addEventListener("click", startGame);
 
-
-/*
-add more questions per category 
-*/

@@ -43,12 +43,12 @@ export const hipHopQuestions = [
   {
     question: "Who is the first Billionaire in Hip-Hop?",
     answers: {
-      choices: ["Kanye West", "Michael B. Jordan", "Rihanna", "Jay-Z"],
+      choices: ["Kanye West", "Diddy", "Rihanna", "Jay-Z"],
       correct: "Jay-Z",
     },
   },
   {
-    question: "Brad Terrence Jordan is better known as what?",
+    question: "Brad Terrence Jordan is better known as who?",
     answers: {
       choices: ["Trick Daddy", "DMC", "Scarface", "Wiz Khalifa"],
       correct: "Scarface",
@@ -96,8 +96,8 @@ export const hipHopQuestions = [
       choices: [
         "The Rebirth",
         "The Prime Years",
-        "The Sample Years",
         "The Golden Age",
+        "The Sample Years",
       ],
       correct: "The Golden Age",
     },
@@ -120,8 +120,8 @@ export const hipHopQuestions = [
   {
     question: "This female is regarded as the Queen of Rap. Who is she?",
     answers: {
-      choices: ["Lil' Kim", "Cardi B", "NIcki Minaj", "Queen Latifah "],
-      correct: "NIcki Minaj",
+      choices: ["Lil' Kim", "Cardi B", "Nicki Minaj", "Queen Latifah "],
+      correct: "Nicki Minaj",
     },
   },
   {
@@ -157,7 +157,7 @@ export const hipHopQuestions = [
   {
     question: "John Jackson is better known to his fans as?",
     answers: {
-      choices: ["RIck Ross", "Fabaolous", "Pusha T", "Lil' Yatchy"],
+      choices: ["Rick Ross", "Fabaolous", "Pusha T", "Lil' Yatchy"],
       correct: "Fabaolous",
     },
   },
