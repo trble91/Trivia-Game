@@ -11,7 +11,6 @@ body {
 button {
   display: inline-block;
   border-radius: 10px;
-  margin: 100px 0 0 0;
   border-style: outset;
 }
 

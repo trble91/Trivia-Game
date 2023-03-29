@@ -7,122 +7,122 @@ export const countryQuestions = [
       },
     },
     {
-      question: "",
+      question: "Which river became a crossroad for country music?",
       answers: {
-        choices: ["", "", "", ""],
-        correct: "",
+        choices: ["Chattahooche River", "Appalachian River", "Mississippi River", "Nile River"],
+        correct: "Mississippi River",
       },
     },
     {
-      question: "",
+      question: "Who is the best-selling female artist in country music history?",
       answers: {
-        choices: ["", "", "", ""],
-        correct: "",
+        choices: ["Celine Dion", "Miranda Lambert", "Dolly Parton", "Shania Twain"],
+        correct: "Shania Twain",
       },
     },
     {
-      question: "",
+      question: "Which city in the 20s gave rise to the first generation of country music’s earliest recording artists?",
       answers: {
-        choices: ["", "", "", ""],
-        correct: "",
+        choices: ["Atlanta", "Nashville", "Savannah", "Memphis"],
+        correct: "Atlanta",
       },
     },
     {
-      question: "",
+      question: "Who recorded two of his best-selling albums in prison",
       answers: {
-        choices: ["", "", "", ""],
-        correct: "",
+        choices: ["Elvis Pressly", "Willie Nelson", "Johnny Cash", "Chuck Norris"],
+        correct: "Johnny Cash",
       },
     },
     {
-      question: "",
+      question: "Which Loretta Lynn song inspired a 1980 biographical film of the same name?",
       answers: {
-        choices: ["", "", "", ""],
-        correct: "",
+        choices: ["Life's Not Fair", "Imatation of Life", "Best Little Whore House In Texas", "Coal Miner’s Daughter"],
+        correct: "Coal Miner’s Daughter",
       },
     },
     {
-      question: "",
+      question: "Which country legend duetted with Julio Iglesias on the 1984 single, “To All the Girls I’ve Loved Before”?",
       answers: {
-        choices: ["", "", "", ""],
-        correct: "",
+        choices: ["Garth Brooks", "Aaron Neville", "Brad Paisley", "Willie Nelson"],
+        correct: "Willie Nelson",
       },
     },
     {
-      question: "",
+      question: "What year was ‘Grand Ole Opry‘ founded",
       answers: {
-        choices: ["", "", "", ""],
-        correct: "",
+        choices: ["1922", "1925", "1924", "1923"],
+        correct: "1925",
       },
     },
     {
-      question: "",
+      question: "Which city is considered the Country Music Capital of the World?",
       answers: {
-        choices: ["", "", "", ""],
-        correct: "",
+        choices: ["Atlanta", "Nashville", "Savannah", "Memphis"],
+        correct: "Nashville",
       },
     },
     {
-      question: "",
+      question: "Which Taylor Swift album spent 275 weeks on the Billboard 200?",
       answers: {
-        choices: ["", "", "", ""],
-        correct: "",
+        choices: ["1989", "Fearless", "Shapeless", "RED"],
+        correct: "Fearless",
       },
     },
     {
-      question: "",
+      question: "Which famous country singer is Miley Cyrus’ godmother?",
       answers: {
-        choices: ["", "", "", ""],
-        correct: "",
+        choices: ["Trisha Yearwood", "Hannah Montana", "", "Dolly Parton"],
+        correct: "Dolly Parton",
       },
     },
     {
-      question: "",
+      question: "Which country-inspired song by Miley Cyrus was featured in the ‘Hannah Montana’ movie?",
       answers: {
-        choices: ["", "", "", ""],
-        correct: "",
+        choices: ["Hannah Montana", "Home", "The Famous Miley", "The Suite Life"],
+        correct: "Hannah Montana",
       },
     },
     {
-      question: "",
+      question: "Which song by Beyonce in her iconic album ‘Lemonade’ was a throwback to her country roots?",
       answers: {
-        choices: ["", "", "", ""],
-        correct: "",
+        choices: ["Momma's Song", "Home Away", "Daddy's Girl", "Gone Home"],
+        correct: "Daddy's Girl",
       },
     },
     {
-      question: "",
+      question: "In what state was Johnny Cash born and raised?",
       answers: {
-        choices: ["", "", "", ""],
-        correct: "",
+        choices: ["New York", "Arkansas", "Texas", "Mississippi"],
+        correct: "Arkansas",
       },
     },
     {
-      question: "",
+      question: "Carrie Underwood was on this American show",
       answers: {
-        choices: ["", "", "", ""],
-        correct: "",
+        choices: ["X-Factor", "America's Got Talent", "American Idol", "The Voice"],
+        correct: "American Idol",
       },
     },
     {
-      question: "",
+      question: "Complete the name of this country act. 'Zac _____ Band'",
       answers: {
-        choices: ["", "", "", ""],
-        correct: "",
+        choices: ["Black", "Green", "White", "Brown"],
+        correct: "Brown",
       },
     },
     {
-      question: "",
+      question: "Who released the classic country album 'No Fences'",
       answers: {
-        choices: ["", "", "", ""],
-        correct: "",
+        choices: ["Garth Brooks", "Garth Books", "Gerth Brooks", "Garth Brook"],
+        correct: "Garth Brooks",
       },
     },
     {
-      question: "",
+      question: "This musician is famous for marrying his younger cousin. Goodness gracious Great Balls of Fire.",
       answers: {
-        choices: ["", "", "", ""],
-        correct: "",
+        choices: ["Jerry Lee Lewis", "", "", ""],
+        correct: "Jerry Lee Lewis",
       },
     },
     {
