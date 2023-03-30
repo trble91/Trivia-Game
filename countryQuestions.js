@@ -72,7 +72,7 @@ export const countryQuestions = [
     {
       question: "Which famous country singer is Miley Cyrus’ godmother?",
       answers: {
-        choices: ["Trisha Yearwood", "Hannah Montana", "", "Dolly Parton"],
+        choices: ["Trisha Yearwood", "Hannah Montana", "Carrie Underwood", "Dolly Parton"],
         correct: "Dolly Parton",
       },
     },
@@ -133,11 +133,11 @@ export const countryQuestions = [
       },
     },
     {
-      question: "",
+      question: "Willie Nelson's signature trait besides handling a guitar, is what?",
       answers: {
-        choices: ["", "", "", ""],
-        correct: "",
+        choices: ["Smoking On Stage", "Lap Dances", "Keg Stands", "Sack race"],
+        correct: "Smoking On Stage",
       },
     },
-  ];
+];
   

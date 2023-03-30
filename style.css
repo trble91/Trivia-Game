@@ -2,7 +2,7 @@ body {
   display: grid;
   flex-wrap: column wrap;
   align-content: center;
-  font-family: "Gloria Hallelujah", cursive;
+  font-family: 'Gloria Hallelujah', cursive;
   justify-content: center;
   background-color: #252525;
   color: #eaeaea

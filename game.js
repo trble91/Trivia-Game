@@ -14,7 +14,7 @@ let popButton = document.querySelector(".pop");
 let countryButton = document.querySelector(".country");
 let scoreBox = document.querySelector(".score");
 let title = document.querySelector(".frontText");
-let winningDiv = document.querySelector(".winner");
+// let winningDiv = document.querySelector(".winner");
 
 
 function startGame(e) {
@@ -40,8 +40,8 @@ function startGame(e) {
   hhButton.classList.toggle("hide");
   popButton.classList.toggle("hide");
   countryButton.classList.toggle("hide");
-  winningDiv.classList.toggle("hide");
-  displayWinner();
+  // winningDiv.classList.toggle("hide");
+  // displayWinner();
 }
 
 // // shuffle questions
@@ -102,24 +102,24 @@ function checkAnswer() {
   }
 }
 
-function displayWinner() {
-  let scoreBox = document.querySelector(".winner");
-  if ( scoreBox.innerText >= 80) {
-    let winnerDiv = document.querySelector(".winner");
-    winnerDiv.innerHTML = "";
-    let winnerText = "You've WON!!!";
-    winnerDiv.insertAdjacentHTML("beforeend", winnerText)
-  } else if ( scoreBox.innerText >= 10) {
-    let clearDiv = document.querySelector(".winner");
-    clearDiv.innerHTML = "Sorry! Try Again";
-  } else {
-    let loserDiv = document.querySelector(".winner");
-    loserDiv.innerHTML = "";
-    let loserText = "";
-    loserDiv.insertAdjacentHTML("beforeend", loserText) 
-  }
-  winningDiv.classList.toggle("hide");
-}
+// function displayWinner() {
+//   let scoreBox = document.querySelector(".winner");
+//   if ( scoreBox.innerText >= 80) {
+//     let winnerDiv = document.querySelector(".winner");
+//     winnerDiv.innerHTML = "";
+//     let winnerText = "You've WON!!!";
+//     winnerDiv.insertAdjacentHTML("beforeend", winnerText)
+//   } else if ( scoreBox.innerText >= 10) {
+//     let clearDiv = document.querySelector(".winner");
+//     clearDiv.innerHTML = "Sorry! Try Again";
+//   } else {
+//     let loserDiv = document.querySelector(".winner");
+//     loserDiv.innerHTML = "";
+//     let loserText = "";
+//     loserDiv.insertAdjacentHTML("beforeend", loserText) 
+//   }
+//   winningDiv.classList.toggle("hide");
+// }
 
 nextButton.addEventListener("click", handleNextQuestion);
 checkButton.addEventListener("click", checkAnswer);
