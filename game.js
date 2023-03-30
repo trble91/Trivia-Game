@@ -12,8 +12,10 @@ let restartButton = document.querySelector(".restart");
 let hhButton = document.querySelector(".hh1");
 let popButton = document.querySelector(".pop");
 let countryButton = document.querySelector(".country");
-let scoreBox = document.querySelector(".score")
-let title = document.querySelector(".frontText")
+let scoreBox = document.querySelector(".score");
+let title = document.querySelector(".frontText");
+let winningDiv = document.querySelector(".winner");
+
 
 function startGame(e) {
   let selection = e.target.innerText
@@ -38,6 +40,8 @@ function startGame(e) {
   hhButton.classList.toggle("hide");
   popButton.classList.toggle("hide");
   countryButton.classList.toggle("hide");
+  winningDiv.classList.toggle("hide");
+  displayWinner();
 }
 
 // // shuffle questions
@@ -73,7 +77,7 @@ function displayQuestion() {
         <input type="radio" name="choice" value="${choices[3]}"> ${choices[3]} <br>
         </ul>
     </div>
-   `;
+   `; 
   questionDiv.insertAdjacentHTML("beforeend", questionText);
 }
 
@@ -85,34 +89,37 @@ function checkAnswer() {
     checkDiv.innerHTML = "";
     let answerText = "You got it right!!!";
     checkDiv.insertAdjacentHTML("beforeend", answerText);
-    score += 5
-    scoreBox.innerText = score
+    score += 5;
+    scoreBox.innerText = score;
   } else {
     // What do you want to do when they get it wrong?
     let wrongDiv = document.querySelector(".check");
     wrongDiv.innerHTML = "";
     let wrongText = "My Guy! Seriously!!";
     wrongDiv.insertAdjacentHTML("beforeend", wrongText);
-    score -= 3
-    scoreBox.innerText = score
+    score -= 3;
+    scoreBox.innerText = score;
   }
 }
 
-// function displayWinner() {
-//   if ( scoreBox.innerText === 100) {
-//     let winnerDiv = document.querySelector(".check");
-//     winnerDiv.innerHTML = "";
-//     let winnerText = "You've WON!!!";
-//     winnerDiv.insertAdjacentHTML("beforebegin", winnerText)
-//   } else {
-//     let loserDiv = document.querySelector(".check");
-//     loserDiv.innerHTML = "";
-//     let loserText = "Sorry! Try Again";
-//     loserDiv.insertAdjacentHTML("beforebegin", loserText)
-//   }
-// // }
-
-// displayWinner();
+function displayWinner() {
+  let scoreBox = document.querySelector(".winner");
+  if ( scoreBox.innerText >= 80) {
+    let winnerDiv = document.querySelector(".winner");
+    winnerDiv.innerHTML = "";
+    let winnerText = "You've WON!!!";
+    winnerDiv.insertAdjacentHTML("beforeend", winnerText)
+  } else if ( scoreBox.innerText >= 10) {
+    let clearDiv = document.querySelector(".winner");
+    clearDiv.innerHTML = "Sorry! Try Again";
+  } else {
+    let loserDiv = document.querySelector(".winner");
+    loserDiv.innerHTML = "";
+    let loserText = "";
+    loserDiv.insertAdjacentHTML("beforeend", loserText) 
+  }
+  winningDiv.classList.toggle("hide");
+}
 
 nextButton.addEventListener("click", handleNextQuestion);
 checkButton.addEventListener("click", checkAnswer);
