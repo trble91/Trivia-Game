@@ -46,6 +46,13 @@ function handleNextQuestion() {
   checkWinner();
   gameWinner();
 }
+function handlePrevQuestion() {
+  questionIndex--;
+  displayQuestion();
+  clearAnswer();
+  checkWinner();
+  gameWinner();
+}
 
 function displayQuestion() {
   const questionDiv = document.querySelector(".question");
@@ -131,5 +138,6 @@ function gameWinner() {
 
 // Event listeners
 nextButton.addEventListener("click", handleNextQuestion);
+prevButton.addEventListener("click", handlePrevQuestion);
 checkButton.addEventListener("click", checkAnswer);
 [hhButton, popButton, countryButton].forEach(button => button.addEventListener("click", startGame));
