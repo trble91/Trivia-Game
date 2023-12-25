@@ -5,20 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Music Trivia Game</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <script src="hiphopQuestions.js" type="module" defer></script>
     <script src="popQuestions.js" type="module" defer></script>
     <script src="countryQuestions.js" type="module" defer></script>
     <script src="game.js" type="module" defer></script>
-   <audio class="audio" autoplay loop>
-    <source src="TRBLE - BAD GUY INSTRUMENTAL.mp3" type="audio/mpeg">Theme Song</source>
-  </audio>
   </head>
   <body>
     <span class="score">000</span>
@@ -32,10 +26,10 @@
       <button class="check hide" class="left">Check Answer</button>
       <button class="next hide" class="right">Next Question</button>
       <button class="restart hide" onClick="location.reload();">
-        Try Again
+        Reset
       </button>
     </span>
-    <span class="winner"></span>
+    <div class="level-winner"></div>
   </body>
   <footer class="games">
     <button class="hh1" href="game.js">Hip-Hop</button>

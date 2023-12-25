@@ -1,129 +1,104 @@
-import { hipHopQuestions } from './hiphopQuestions.js';
-import { popQuestions } from './popQuestions.js';
-import { countryQuestions } from './countryQuestions.js';
+import { hipHopQuestions } from "./hiphopQuestions.js";
+import { popQuestions } from "./popQuestions.js";
+import { countryQuestions } from "./countryQuestions.js";
 
-let questions = []
+let questions = [];
 let questionIndex = 0;
 let score = 0;
 
-let nextButton = document.querySelector(".next");
-let checkButton = document.querySelector(".check");
-let restartButton = document.querySelector(".restart");
-let hhButton = document.querySelector(".hh1");
-let popButton = document.querySelector(".pop");
-let countryButton = document.querySelector(".country");
-let scoreBox = document.querySelector(".score");
-let title = document.querySelector(".frontText");
-// let winningDiv = document.querySelector(".winner");
-
+// DOM elements
+const nextButton = document.querySelector(".next");
+const checkButton = document.querySelector(".check");
+const restartButton = document.querySelector(".restart");
+const hhButton = document.querySelector(".hh1");
+const popButton = document.querySelector(".pop");
+const countryButton = document.querySelector(".country");
+const scoreBox = document.querySelector(".score");
+const title = document.querySelector(".frontText");
 
 function startGame(e) {
-  let selection = e.target.innerText
-  
-  title.classList.add("hide")
-  if (selection === "Hip-Hop") {
-    questions = hipHopQuestions;
-  } else if (selection === "Pop") {
-    questions = popQuestions;
-  } else if (selection === "Country") {
-    questions = countryQuestions;
-  } else {
-    questions = hipHopQuestions;l
-  }
+  const selection = e.target.innerText;
+  title.classList.add("hide");
 
-  shuffleQuestion();
+  // Set questions based on user selection
+  questions = selection === "Hip-Hop" ? hipHopQuestions :
+              selection === "Pop" ? popQuestions :
+              selection === "Country" ? countryQuestions :
+              hipHopQuestions;
+
+  shuffleQuestions();
   displayQuestion();
   questionIndex = 0;
   restartButton.classList.remove("hide");
   nextButton.classList.remove("hide");
   checkButton.classList.remove("hide");
-  hhButton.classList.toggle("hide");
-  popButton.classList.toggle("hide");
-  countryButton.classList.toggle("hide");
-  // winningDiv.classList.toggle("hide");
-  // displayWinner();
+  [hhButton, popButton, countryButton].forEach(button => button.classList.toggle("hide"));
 }
 
-// // shuffle questions
-function shuffleQuestion() {
-  let newQuestions = [];
-  newQuestions = questions.sort((a, b) => 0.5 - Math.random());
+function shuffleQuestions() {
+  questions = questions.sort(() => 0.5 - Math.random());
 }
 
 function handleNextQuestion() {
   questionIndex++;
   displayQuestion();
-  // Clears the displayed answer and returns it back to default
-  let clearDiv = document.querySelector(".check");
-  clearDiv.innerHTML = "Check Answer";
+  clearAnswer();
+  checkWinner();
 }
 
 function displayQuestion() {
-  let questionDiv = document.querySelector(".question");
+  const questionDiv = document.querySelector(".question");
   questionDiv.innerHTML = "";
 
-  // declare a variable to set the index to zero
-  let question = questions[questionIndex].question;
-  let choices = questions[questionIndex].answers.choices;
+  const { question, answers: { choices } } = questions[questionIndex];
 
-  let questionText = `
+  const questionText = `
     <div class="content">
-        <h1>${question}</h1>
-        <h3>Click One</h3>
-        <ul>
-        <input type="radio" name="choice" value="${choices[0]}"> ${choices[0]} <br>
-        <input type="radio" name="choice" value="${choices[1]}"> ${choices[1]} <br>
-        <input type="radio" name="choice" value="${choices[2]}"> ${choices[2]} <br>
-        <input type="radio" name="choice" value="${choices[3]}"> ${choices[3]} <br>
-        </ul>
+      <h1>${question}</h1>
+      <h3>Click One</h3>
+      <ul>
+        ${choices.map(choice => `<input type="radio" name="choice" value="${choice}"> ${choice} <br>`).join('')}
+      </ul>
     </div>
-   `; 
+   `;
+
   questionDiv.insertAdjacentHTML("beforeend", questionText);
 }
 
 function checkAnswer() {
-  let userChoice = document.querySelector("input[name=choice]:checked").value;
-  if (userChoice === questions[questionIndex].answers.correct) {
-    // What do you want to do when they get it right?
-    let checkDiv = document.querySelector(".check");
-    checkDiv.innerHTML = "";
-    let answerText = "You got it right!!!";
-    checkDiv.insertAdjacentHTML("beforeend", answerText);
-    score += 5;
-    scoreBox.innerText = score;
+  const userChoice = document.querySelector("input[name=choice]:checked").value;
+  const correctAnswer = questions[questionIndex].answers.correct;
+
+  const feedbackDiv = document.querySelector(".check");
+  feedbackDiv.innerHTML = userChoice === correctAnswer ? "You got it right!" : "My Guy. Seriously!";
+
+  score += userChoice === correctAnswer ? 5 : 0;
+  scoreBox.innerText = score;
+}
+
+function clearAnswer() {
+  const feedbackDiv = document.querySelector(".check");
+  feedbackDiv.innerHTML = "Check Answer";
+}
+
+function checkWinner() {
+  const winningDiv = document.querySelector(".winner");
+  winningDiv.innerHTML = "";
+
+  if (score === 100) {
+    const winningText = "You've Won!";
+    winningDiv.insertAdjacentHTML("beforeend", winningText);
+    winningDiv.classList.remove("hide");
+  } else if (questions.length === 0) {
+    const winningText = "Try Again!";
+    winningDiv.insertAdjacentHTML("beforeend", winningText);
+    winningDiv.classList.remove("hide");
   } else {
-    // What do you want to do when they get it wrong?
-    let wrongDiv = document.querySelector(".check");
-    wrongDiv.innerHTML = "";
-    let wrongText = "My Guy! Seriously!!";
-    wrongDiv.insertAdjacentHTML("beforeend", wrongText);
-    score -= 3;
-    scoreBox.innerText = score;
+    startGame();
   }
 }
 
-// function displayWinner() {
-//   let scoreBox = document.querySelector(".winner");
-//   if ( scoreBox.innerText >= 80) {
-//     let winnerDiv = document.querySelector(".winner");
-//     winnerDiv.innerHTML = "";
-//     let winnerText = "You've WON!!!";
-//     winnerDiv.insertAdjacentHTML("beforeend", winnerText)
-//   } else if ( scoreBox.innerText >= 10) {
-//     let clearDiv = document.querySelector(".winner");
-//     clearDiv.innerHTML = "Sorry! Try Again";
-//   } else {
-//     let loserDiv = document.querySelector(".winner");
-//     loserDiv.innerHTML = "";
-//     let loserText = "";
-//     loserDiv.insertAdjacentHTML("beforeend", loserText) 
-//   }
-//   winningDiv.classList.toggle("hide");
-// }
-
+// Event listeners
 nextButton.addEventListener("click", handleNextQuestion);
 checkButton.addEventListener("click", checkAnswer);
-hhButton.addEventListener("click", startGame);
-popButton.addEventListener("click", startGame);
-countryButton.addEventListener("click", startGame);
-
+[hhButton, popButton, countryButton].forEach(button => button.addEventListener("click", startGame));

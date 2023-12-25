@@ -2,41 +2,34 @@ body {
   display: grid;
   flex-wrap: column wrap;
   align-content: center;
-  font-family: 'Gloria Hallelujah', cursive;
+  font-family: 'Rubik+Doodle', sans-serif;
+  font-size: 16px;
   justify-content: center;
   background-color: #252525;
-  color: #eaeaea
+  color: #eaeaea;
 }
 
 .frontText {
   display: flex;
-  font-size: 30px;
   height: 150px;
-
 }
 
 button {
-  display: inline-block;
-  border-radius: 10px;
-  border-style: outset;
+  background: #0b9effdb;
+  color: #333;
+  font-size: 18px;
+  font-family: 'Rubik+Doodle', sans-serif;
+  border-radius: 25px; /* Squared sides */
+  padding: 10px 15px; /* Even padding */
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 button:hover {
-  background: #ffff1fdb;
+  background: #0b9dffa2;
   color: #191919;
-}
-
-button {
-  margin: 5px; /* space between buttons */
-  background: #ffff00db; /* background color */
-  color: #333; /* text color */
-  font-size: 18px;
-  font-family: "Gloria Hallelujah", cursive;
-  border-radius: 50px; /* rounded corners */
-  padding: 10px; /* space around text */
-  -moz-transition: all 0.2s;
-  -webkit-transition: all 0.2s;
-  transition: all 0.5s; 
+  transform: scale(1.05); /* Slight scale effect on hover */
 }
 
 .hide {
@@ -65,4 +58,33 @@ button {
   justify-content: flex-end;
   font-size: 26px;
   padding: 40px 20px 5px 10px;
+}
+
+.winner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4rem;
+  background-color: #111;
+  text-align: center;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 250ms ease;
+}
+
+.game-over .winner {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  .frontText {
+    font-size: 20px; /* Adjust font size for smaller screens */
+    height: auto; /* Adjust height for smaller screens */
+  }
 }
