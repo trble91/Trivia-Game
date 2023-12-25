@@ -24,7 +24,7 @@ function startGame(e) {
   questions = selection === "Hip-Hop" ? hipHopQuestions :
               selection === "Pop" ? popQuestions :
               selection === "Country" ? countryQuestions :
-              hipHopQuestions;
+              [];
 
   shuffleQuestions();
   displayQuestion();
@@ -36,7 +36,7 @@ function startGame(e) {
 }
 
 function shuffleQuestions() {
-  questions = questions.sort(() => 0.5 - Math.random());
+  questions = [...questions].sort(() => 0.5 - Math.random());
 }
 
 function handleNextQuestion() {
@@ -44,6 +44,7 @@ function handleNextQuestion() {
   displayQuestion();
   clearAnswer();
   checkWinner();
+  gameWinner();
 }
 
 function displayQuestion() {
@@ -65,31 +66,61 @@ function displayQuestion() {
   questionDiv.insertAdjacentHTML("beforeend", questionText);
 }
 
+let questionAnswered = false; // Add this variable to keep track of whether the question has been answered
+
 function checkAnswer() {
-  const userChoice = document.querySelector("input[name=choice]:checked").value;
-  const correctAnswer = questions[questionIndex].answers.correct;
+  if (!questionAnswered) {
+    const userChoiceElement = document.querySelector("input[name=choice]:checked");
 
-  const feedbackDiv = document.querySelector(".check");
-  feedbackDiv.innerHTML = userChoice === correctAnswer ? "You got it right!" : "My Guy. Seriously!";
+    if (userChoiceElement) {
+      const userChoice = userChoiceElement.value;
+      const correctAnswer = questions[questionIndex].answers.correct;
 
-  score += userChoice === correctAnswer ? 5 : 0;
-  scoreBox.innerText = score;
+      const feedbackDiv = document.querySelector(".check");
+      feedbackDiv.innerHTML = userChoice === correctAnswer ? "You got it right!" : "My Guy. Seriously!";
+
+      score += userChoice === correctAnswer ? 5 : 0;
+      scoreBox.innerText = score;
+
+      questionAnswered = true; // Set the flag to true once the question has been answered
+    } else {
+      alert("Please select an answer before checking!");
+    }
+  } else {
+    alert("You've already answered this question!");
+  }
 }
 
 function clearAnswer() {
   const feedbackDiv = document.querySelector(".check");
   feedbackDiv.innerHTML = "Check Answer";
+  questionAnswered = false; // Reset the flag when moving to the next question
 }
 
 function checkWinner() {
   const winningDiv = document.querySelector(".winner");
   winningDiv.innerHTML = "";
-
-  if (score === 100) {
+  if (score === 100 && questions.length === 0) {
     const winningText = "You've Won!";
     winningDiv.insertAdjacentHTML("beforeend", winningText);
     winningDiv.classList.remove("hide");
   } else if (questions.length === 0) {
+    const winningText = "Try Again!";
+    winningDiv.insertAdjacentHTML("beforeend", winningText);
+    winningDiv.classList.remove("hide");
+  } else {
+    startGame();
+  }
+}
+function gameWinner() {
+  const winningDiv = document.querySelector(".winner");
+  winningDiv.innerHTML = "";
+
+  if (score === 100 && questions.length === 0) {
+    const winningText = "You've Won!";
+    winningDiv.insertAdjacentHTML("beforeend", winningText);
+    winningDiv.classList.remove("hide");
+  } else if (score === 100) {
     const winningText = "Try Again!";
     winningDiv.insertAdjacentHTML("beforeend", winningText);
     winningDiv.classList.remove("hide");
