@@ -16,6 +16,8 @@ const popButton = document.querySelector(".pop");
 const countryButton = document.querySelector(".country");
 const scoreBox = document.querySelector(".score");
 const title = document.querySelector(".frontText");
+const MAX_SCORE = 100;
+const CORRECT_ANSWER_SCORE = 5;
 
 function startGame(e) {
   const selection = e.target.innerText;
@@ -31,6 +33,7 @@ function startGame(e) {
   displayQuestion();
   questionIndex = 0;
   restartButton.classList.remove("hide");
+  prevButton.classList.remove("hide");
   nextButton.classList.remove("hide");
   checkButton.classList.remove("hide");
   [hhButton, popButton, countryButton].forEach(button => button.classList.toggle("hide"));
@@ -109,37 +112,38 @@ function clearAnswer() {
 function checkWinner() {
   const winningDiv = document.querySelector(".winner");
   winningDiv.innerHTML = "";
-  if (score === 100 && questions.length === 0) {
-    const winningText = "You've Won!";
-    winningDiv.insertAdjacentHTML("beforeend", winningText);
-    winningDiv.classList.remove("hide");
+
+  if (score === MAX_SCORE && questions.length === 0) {
+    displayWinningMessage("You've Won!");
   } else if (questions.length === 0) {
-    const winningText = "Try Again!";
-    winningDiv.insertAdjacentHTML("beforeend", winningText);
-    winningDiv.classList.remove("hide");
+    displayWinningMessage("Try Again!");
   } else {
     startGame();
   }
 }
+
 function gameWinner() {
   const winningDiv = document.querySelector(".winner");
   winningDiv.innerHTML = "";
 
-  if (score === 100 && questions.length === 0) {
-    const winningText = "You've Won!";
-    winningDiv.insertAdjacentHTML("beforeend", winningText);
-    winningDiv.classList.remove("hide");
-  } else if (score === 100) {
-    const winningText = "Try Again!";
-    winningDiv.insertAdjacentHTML("beforeend", winningText);
-    winningDiv.classList.remove("hide");
+  if (score === MAX_SCORE && questions.length === 0) {
+    displayWinningMessage("You've Won!");
+  } else if (score === MAX_SCORE) {
+    displayWinningMessage("Try Again!");
   } else {
     startGame();
   }
 }
 
-// Event listeners
-nextButton.addEventListener("click", handleNextQuestion);
-prevButton.addEventListener("click", handlePrevQuestion);
-checkButton.addEventListener("click", checkAnswer);
-[hhButton, popButton, countryButton].forEach(button => button.addEventListener("click", startGame));
+function displayWinningMessage(message) {
+  const winningDiv = document.querySelector(".winner");
+  winningDiv.insertAdjacentHTML("beforeend", message);
+  winningDiv.classList.remove("hide");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  nextButton.addEventListener("click", handleNextQuestion);
+  prevButton.addEventListener("click", handlePrevQuestion);
+  checkButton.addEventListener("click", checkAnswer);
+  [hhButton, popButton, countryButton].forEach(button => button.addEventListener("click", startGame));
+});
