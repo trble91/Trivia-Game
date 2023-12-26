@@ -7,6 +7,7 @@ let questionIndex = 0;
 let score = 0;
 
 // DOM elements
+const prevButton = document.querySelector(".prev");
 const nextButton = document.querySelector(".next");
 const checkButton = document.querySelector(".check");
 const restartButton = document.querySelector(".restart");
@@ -46,6 +47,7 @@ function handleNextQuestion() {
   checkWinner();
   gameWinner();
 }
+
 function handlePrevQuestion() {
   questionIndex--;
   displayQuestion();

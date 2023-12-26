@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Music Trivia Game</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-    <script src="hiphopQuestions.js" type="module" defer></script>
-    <script src="popQuestions.js" type="module" defer></script>
-    <script src="countryQuestions.js" type="module" defer></script>
-    <script src="game.js" type="module" defer></script>
-  </head>
-  <body>
-    <span class="score">000</span>
-    <div class="frontText">
-      <h1>Music Trivia Game</h1>
-    </div>
-    <div class="question">
-      <!-- Inserted with JS -->
-    </div>
-    <span class="button-container">
-      <button class="prev hide" class="left">Prev Question</button>
-      <button class="check hide" class="left">Check Answer</button>
-      <button class="next hide" class="right">Next Question</button>
-      <button class="restart hide" onClick="location.reload();">
-        Reset
-      </button>
-    </span>
-    <div class="level-winner"></div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Trivia Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script src="hiphopQuestions.js" type="module" defer></script>
+  <script src="popQuestions.js" type="module" defer></script>
+  <script src="countryQuestions.js" type="module" defer></script>
+  <script src="game.js" type="module" defer></script>
+</head>
+<body>
+  <span class="score">000</span>
+  <div class="frontText">
+    <h1>Music Trivia Game</h1>
+  </div>
+  <div class="question">
+    <!-- Inserted with JS -->
+  </div>
+  <span class="button-container">
+    <button class="check hide">Prev Question</button>
+    <button class="check hide left">Check Answer</button>
+    <button class="next hide right">Next Question</button>
+    <button class="restart hide" onClick="location.reload();">
+      Reset
+    </button>
+  </span>    
+  <div class="level-winner"></div>
+  
+  <!-- Footer inside the body -->
   <footer class="games">
-    <button class="hh1" href="game.js">Hip-Hop</button>
-    <button class="pop" href="pop.js">Pop</button>
-    <button class="country" href="country.js">Country</button>
+    <a class="hh1" href="game.js">Hip-Hop</a>
+    <a class="pop" href="pop.js">Pop</a>
+    <a class="country" href="country.js">Country</a>
   </footer>
+</body>
 </html>
